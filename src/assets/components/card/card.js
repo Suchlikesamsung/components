@@ -14,7 +14,7 @@ const CardComponent = (props) => {
             .catch(
                 error => console.error("API통신에러:", error)
             )
-    })
+    },[])
 
     console.log(data)
 
@@ -23,9 +23,9 @@ const CardComponent = (props) => {
         <ul id="concepts">
             {data.map(item => (
                 <li key={item.id} className="concept">
-                    <img src="" alt={item.title} />
+                    <img src="" alt={item.images.description} />
                     <h2>{item.title}</h2>
-                    <p>{item.description}</p>
+                    <p>{item.content}</p>
                 </li>
             ))}
         </ul>
